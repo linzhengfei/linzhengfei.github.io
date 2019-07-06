@@ -3,12 +3,29 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://linzhengfei.github.io/categories/</loc>
-    <priority>0</priority>
+    <loc>https://linzhengfei.github.io/about/</loc>
+    <lastmod>2019-07-06T20:59:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://linzhengfei.github.io/post/buildhugo/</loc>
+    <lastmod>2019-07-06T20:59:01+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://linzhengfei.github.io/</loc>
+    <lastmod>2019-07-06T20:59:01+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://linzhengfei.github.io/post/</loc>
+    <lastmod>2019-07-06T20:59:01+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://linzhengfei.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   

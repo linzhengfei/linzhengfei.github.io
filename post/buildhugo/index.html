@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-us">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>BuildHugo - My New Hugo Site</title>
+	<script>(function(d,e){d[e]=d[e].replace("no-js","js");})(document.documentElement,"className");</script>
+	<meta name="description" content="">
+	
+	
+	<link rel="dns-prefetch" href="//fonts.googleapis.com">
+	<link rel="dns-prefetch" href="//fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="stylesheet" href="/css/style.css">
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+		
+</head>
+<body class="body">
+	<div class="container container--outer">
+		<header class="header">
+	<div class="container">
+		<div class="logo">
+			<a class="logo__link" href="/" title="My New Hugo Site" rel="home">
+				<div class="logo__title">My New Hugo Site</div>
+				
+			</a>
+		</div>
+		<div class="divider"></div>
+	</div>
+</header>
+		<div class="wrapper flex">
+			<div class="primary">
+			
+<main class="main" role="main">
+	<article class="post">
+		<header class="post__header">
+			<h1 class="post__title">BuildHugo</h1>
+			
+		</header><div class="content post__content clearfix">
+			
+
+<p>快速开始
+安装Hugo
+1. 二进制安装（推荐：简单、快速）
+到 Hugo Releases 下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe）</p>
+
+<p>Mac下直接使用 Homebrew 安装：</p>
+
+<p>brew install hugo
+2. 源码安装
+源码编译安装，首先安装好依赖的工具：</p>
+
+<p>Git
+Mercurial
+Go 1.3+ (Go 1.4+ on Windows)
+设置好 GOPATH 环境变量，获取源码并编译：</p>
+
+<p>$ export GOPATH=$HOME/go
+$ go get -v github.com/spf13/hugo
+源码会下载到 $GOPATH/src 目录，二进制在 $GOPATH/bin/</p>
+
+<p>如果需要更新所有Hugo的依赖库，增加 -u 参数：</p>
+
+<p>$ go get -u -v github.com/spf13/hugo
+生成站点
+使用Hugo快速生成站点，比如希望生成到 /path/to/site 路径：</p>
+
+<p>$ hugo new site /path/to/site
+这样就在 /path/to/site 目录里生成了初始站点，进去目录：</p>
+
+<p>$ cd /path/to/site
+站点目录结构：</p>
+
+<p>▸ archetypes/
+  ▸ content/
+  ▸ layouts/
+  ▸ static/
+    config.toml
+创建文章
+创建一个 about 页面：</p>
+
+<p>$ hugo new about.md
+about.md 自动生成到了 content/about.md ，打开 about.md 看下：</p>
+
+<p>+++
+date = &ldquo;2015-10-25T08:36:54-07:00&rdquo;
+draft = true
+title = &ldquo;about&rdquo;</p>
+
+<p>+++</p>
+
+<p>正文内容
+内容是 Markdown 格式的，+++ 之间的内容是 TOML 格式的，根据你的喜好，你可以换成 YAML 格式（使用 &mdash; 标记）或者 JSON 格式。</p>
+
+<p>创建第一篇文章，放到 post 目录，方便之后生成聚合页面。</p>
+
+<p>$ hugo new post/first.md
+打开编辑 post/first.md ：</p>
+
+<hr />
+
+<p>date: &ldquo;2015-10-25T08:36:54-07:00&rdquo;
+title: &ldquo;first&rdquo;</p>
+
+<hr />
+
+<h3 id="hello-hugo">Hello Hugo</h3>
+
+<ol>
+<li>aaa</li>
+<li>bbb</li>
+<li>ccc
+安装皮肤
+到 皮肤列表 挑选一个心仪的皮肤，比如你觉得 Hyde 皮肤不错，找到相关的 GitHub 地址，创建目录 themes，在 themes 目录里把皮肤 git clone 下来：</li>
+</ol>
+
+<h1 id="创建-themes-目录">创建 themes 目录</h1>
+
+<p>$ cd themes
+$ git clone <a href="https://github.com/spf13/hyde.git">https://github.com/spf13/hyde.git</a>
+运行Hugo
+在你的站点根目录执行 Hugo 命令进行调试：</p>
+
+<p>$ hugo server &ndash;theme=hyde &ndash;buildDrafts
+（注明：v0.15 版本之后，不再需要使用 &ndash;watch 参数了）</p>
+
+<p>浏览器里打开： <a href="http://localhost:1313">http://localhost:1313</a></p>
+
+<p>部署
+假设你需要部署在 GitHub Pages 上，首先在GitHub上创建一个Repository，命名为：coderzh.github.io （coderzh替换为你的github用户名）。</p>
+
+<p>在站点根目录执行 Hugo 命令生成最终页面：</p>
+
+<p>$ hugo &ndash;theme=hyde &ndash;baseUrl=&ldquo;<a href="http://coderzh.github.io/&quot;">http://coderzh.github.io/&quot;</a>
+（注意，以上命令并不会生成草稿页面，如果未生成任何文章，请去掉文章头部的 draft=true 再重新生成。）</p>
+
+<p>如果一切顺利，所有静态页面都会生成到 public 目录，将pubilc目录里所有文件 push 到刚创建的Repository的 master 分支。</p>
+
+<p>$ cd public
+$ git init
+$ git remote add origin <a href="https://github.com/coderzh/coderzh.github.io.git">https://github.com/coderzh/coderzh.github.io.git</a>
+$ git add -A
+$ git commit -m &ldquo;first commit&rdquo;
+$ git push -u origin master
+浏览器里访问：<a href="http://coderzh.github.io/">http://coderzh.github.io/</a></p>
+
+		</div>
+		
+	</article>
+</main>
+
+
+
+
+			</div>
+			
+		</div>
+		<footer class="footer">
+	<div class="container footer__container flex">
+		
+		<div class="footer__copyright">
+			&copy; 2019 My New Hugo Site.
+			<span class="footer__copyright-credits">Generated with <a href="https://gohugo.io/" rel="nofollow noopener" target="_blank">Hugo</a> and <a href="https://github.com/Vimux/Mainroad/" rel="nofollow noopener" target="_blank">Mainroad</a> theme.</span>
+		</div>
+	</div>
+</footer>
+	</div>
+<script async defer src="/js/menu.js"></script></body>
+</html>
